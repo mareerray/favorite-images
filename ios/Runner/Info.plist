@@ -47,6 +47,11 @@
 			</array>
 		</dict>
 	</dict>
+	<!-- Give permission to use camera and photo library -->
+	<key>NSCameraUsageDescription</key>
+    <string>This app needs camera to take photos for your gallery.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs photo library to pick images for your gallery.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
