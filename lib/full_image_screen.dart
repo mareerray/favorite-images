@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FullImageScreen extends StatelessWidget {
   final XFile imageFile;
@@ -10,7 +11,10 @@ class FullImageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Zoom Image')),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFD7537F),
+        title: Text('Favorite Images', style: GoogleFonts.shrikhand(fontSize: 26, color: Colors.blueGrey)),
+        ),
       backgroundColor: Colors.black,
       body: Center(
         child: InteractiveViewer(
