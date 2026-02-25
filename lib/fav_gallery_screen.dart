@@ -130,6 +130,7 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
                         top: 2,
                         right: 2,
                         child: GestureDetector(
+                          behavior: HitTestBehavior.opaque,
                           onTap: () => _showDeleteDialog(index),  
                           child: Container(
                             padding: EdgeInsets.all(4),
