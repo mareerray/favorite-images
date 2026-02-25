@@ -25,7 +25,6 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
       });
 
       // Custom success message - stays 2 seconds!
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Row(
@@ -36,8 +35,8 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
             ],
           ),
           backgroundColor: Colors.blueGrey,
-          duration: Duration(seconds: 2),  // Stays longer!
-          behavior: SnackBarBehavior.floating,  // Pretty floating style
+          duration: Duration(seconds: 2),  
+          behavior: SnackBarBehavior.floating, 
           margin: EdgeInsets.all(16),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
@@ -92,9 +91,9 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/gallery_bg.jpg'), // Background image
+            image: AssetImage('assets/images/gallery_bg.jpg'), 
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.2), BlendMode.darken), // Darken for contrast
+            colorFilter: ColorFilter.mode(Colors.black.withValues(alpha: 0.2), BlendMode.darken), 
           ),
         ),
         child: _images.isEmpty
@@ -117,7 +116,6 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
                 ),
                 child: Stack(
                     children: [
-                      // Image background
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.file(
@@ -132,15 +130,15 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
                         top: 2,
                         right: 2,
                         child: GestureDetector(
-                          onTap: () => _showDeleteDialog(index),  // Your delete func
+                          onTap: () => _showDeleteDialog(index),  
                           child: Container(
                             padding: EdgeInsets.all(4),
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(61, 0, 0, 0),  // Semi-transparent bg
+                              color: const Color.fromARGB(61, 0, 0, 0), 
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
-                              Icons.delete_forever,  // or Icons.delete
+                              Icons.delete_forever,  
                               color: Colors.white,
                               size: 15,
                             ),
