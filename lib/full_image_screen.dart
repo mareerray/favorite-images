@@ -13,18 +13,19 @@ class FullImageScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFD7537F),
-        title: Text('Favorite Images', style: GoogleFonts.shrikhand(fontSize: 26, color: Colors.blueGrey)),
-        ),
+        title: Text('Favorite Images', style: GoogleFonts.shrikhand(fontSize: 26, color: Colors.blueGrey)),        ),
       backgroundColor: Colors.black,
       body: Center(
         child: InteractiveViewer(
+          constrained: true,
+          clipBehavior: Clip.none,
           panEnabled: true, // Drag to move
           boundaryMargin: EdgeInsets.all(20), // Extra space for pan
           minScale: 0.5, // Zoom out max
           maxScale: 4.0, // Zoom in max
           child: Image.file(
             File(imageFile.path),
-            fit: BoxFit.contain, // Full image visible
+            fit: BoxFit.fitWidth, // Full image visible
           ),
         ),
       ),

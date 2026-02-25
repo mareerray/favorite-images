@@ -103,6 +103,7 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
               padding: EdgeInsets.all(8),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, // 3 columns
+                childAspectRatio: 1, // Square tiles
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 4,
               ),
@@ -114,17 +115,43 @@ class _FavGalleryScreenState extends State<FavGalleryScreen> {
                     builder: (context) => FullImageScreen(imageFile: XFile(_images[index].path)),
                   ),
                 ),
-                onLongPress: () => _showDeleteDialog(index),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                    child: Image.file(
-                      File(_images[index].path),
-                      fit: BoxFit.cover,
-                    ),
-                ),
+                child: Stack(
+                    children: [
+                      // Image background
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.file(
+                          File(_images[index].path),
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                      // Delete icon overlay (top-right, always visible)
+                      Positioned(
+                        top: 2,
+                        right: 2,
+                        child: GestureDetector(
+                          onTap: () => _showDeleteDialog(index),  // Your delete func
+                          child: Container(
+                            padding: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(61, 0, 0, 0),  // Semi-transparent bg
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.delete_forever,  // or Icons.delete
+                              color: Colors.white,
+                              size: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
               ),
             ),
-      )
+        )
     );
   }
 
