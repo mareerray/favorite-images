@@ -50,6 +50,22 @@ flutter emulators --launch apple_ios_simulator
 flutter run
 ```
 
+### **Android Setup (OnePlus Nord CE4 Lite)**
+Settings → About device → Version → Version No. → Tap 7x → Enter PIN 
+
+→ "You are now a developer!" → Back → Additional Settings → Developer options
+
+→ USB debugging → ON
+
+Plug in USB cable → Phone notification → File Transfer/Android Debug
+
+
+### **Terminal:**
+```
+flutter devices           # Find device ID
+flutter run -d <deviceId> # Install & run
+```
+
 ## 📝 Learning Objectives Achieved
  - Device camera/gallery (image_picker)
 
