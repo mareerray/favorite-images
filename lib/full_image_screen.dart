@@ -13,7 +13,8 @@ class FullImageScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFD7537F),
-        title: Text('Favorite Images', style: GoogleFonts.shrikhand(fontSize: 26, color: Colors.blueGrey)),        ),
+        title: Text('Favorite Images', style: GoogleFonts.shrikhand(fontSize: 26, color: Colors.blueGrey)),        
+      ),
       backgroundColor: Colors.black,
       body: Center(
         child: InteractiveViewer(
