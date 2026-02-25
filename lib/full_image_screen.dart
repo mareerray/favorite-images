@@ -22,7 +22,7 @@ class FullImageScreen extends StatelessWidget {
           clipBehavior: Clip.none,
           panEnabled: true, // Drag to move
           boundaryMargin: EdgeInsets.all(20), // Extra space for pan
-          minScale: 0.5, // Zoom out max
+          minScale: 1.0, // normal size
           maxScale: 4.0, // Zoom in max
           child: Image.file(
             File(imageFile.path),
