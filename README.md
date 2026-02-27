@@ -53,7 +53,7 @@ flutter run
 ### **Android Setup (OnePlus Nord CE4 Lite)**
 Settings → About device → Version → Version No. → Tap 7x → Enter PIN 
 
-→ "You are now a developer!" → Back → Additional Settings → Developer options
+→ "You are now a developer!" → Back → System & update → Developer options
 
 → USB debugging → ON
 

@@ -18,7 +18,6 @@ class FullImageScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Center(
         child: InteractiveViewer(
-          constrained: true,
           clipBehavior: Clip.none,
           panEnabled: true, // Drag to move
           boundaryMargin: EdgeInsets.all(20), // Extra space for pan
